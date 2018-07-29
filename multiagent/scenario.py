@@ -42,4 +42,4 @@ class BaseScenario(ABC):
         """
         Indicates if the game is done (agent perspective)
         """
-        pass
+        return False

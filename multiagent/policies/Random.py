@@ -29,5 +29,10 @@ class RandomPolicy(Policy):
                 choice_c = random.choice(range(num_choices))
                 action_c[choice_c] += 1.0
 
-        resulting_action = np.concatenate([action_p, action_c])
+        if self.env.world.dim_p > 1:
+            resulting_action = np.concatenate([action_p, action_c])
+        else:
+            resulting_action = np.concatenate([action_c])
+
+        print("ACT => {}".format(resulting_action))
         return resulting_action

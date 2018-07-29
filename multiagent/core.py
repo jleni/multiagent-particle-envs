@@ -26,6 +26,9 @@ class Action(object):
         # communication action
         self.c = None
 
+    def __str__(self):
+        return "[{}|{}]".format(self.u, self.c)
+
 
 # properties and state of physical world entity
 class Entity(object):
@@ -83,6 +86,9 @@ class Agent(Entity):
         self.action = Action()
         # script behavior to execute
         self.action_callback = None
+
+    def __str__(self):
+        return "{}".format(self.action)
 
 
 # multi-agent world
